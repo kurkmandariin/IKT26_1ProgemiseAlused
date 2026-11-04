@@ -1,0 +1,115 @@
+C#-is kasutatakse `$` märki string interpolation jaoks ehk muutujate lisamiseks teksti sisse.
+
+Näide ilma `$` märgita:
+
+```
+string nimi = "Ott";
+int vanus = 17;
+
+Console.WriteLine("Minu nimi on " + nimi + " ja olen " + vanus);
+```
+
+Näide `$` märgiga:
+
+```
+string nimi = "Ott";
+int vanus = 17;
+
+Console.WriteLine($"Minu nimi on {nimi} ja olen {vanus}");
+```
+
+Mõlemad väljastavad:
+
+```
+Minu nimi on Ott ja olen 17
+```
+
+Pea meeles:
+
+- `$` pannakse jutumärkide ette.
+- `{ }` sisse kirjutatakse muutuja või arvutus.
+- `$` teeb muutujate lisamise teksti sisse lihtsamaks.
+
+Näiteks `Console.WriteLine($"Vastus on {5 + 5}");` väljastab `Vastus on 10`.
+
+
+
+
+Andmetüüp	Kirjeldus			Suurus
+bool		True või false			8 bitti*
+byte		Täisarv 0–255			8 bitti
+short		Väike täisarv			16 bitti
+int		Täisarv				32 bitti
+long		Suur täisarv			64 bitti
+float		Komakohaga arv			32 bitti
+double		Täpsem komakohaga arv		64 bitti
+decimal		Väga täpne komakohaga arv	128 bitti
+char		Üks märk			16 bitti
+string		Tekst				Muutuv
+
+
+int hinne = 4;
+
+if (hinne == 5)
+{
+    Console.WriteLine("Väga hea");
+}
+else if (hinne == 4)
+{
+    Console.WriteLine("Hea");
+}
+else
+{
+    Console.WriteLine("Proovi uuesti");
+}
+
+
+
+C#-is kutsud ehk call'id meetodit välja, kirjutades meetodi nime ja sulud ().
+1. Meetodi loomine
+static void Tervita()
+{
+    Console.WriteLine("Tere!");
+}
+
+
+2. Meetodi kutsumine (calling)
+Tervita();
+
+
+3. Täielik näide
+static void Main(string[] args)
+{
+    Tervita();
+}
+
+static void Tervita()
+{
+    Console.WriteLine("Tere!");
+}
+
+
+Väljund:
+Tere!
+
+
+4. Meetod parameetriga
+Meetodile saad anda ka väärtuse.
+static void Tervita(string nimi)
+{
+    Console.WriteLine($"Tere, {nimi}!");
+}
+
+
+Kutsumine:
+Tervita("Ott");
+
+
+Väljund: Tere, Ott!
+5. Pea meeles
+Mõiste	Tähendus
+static void	Meetod, mis ei tagasta väärtust
+Tervita	Meetodi nimi
+()	Meetodi sulud
+string nimi	Parameeter
+Tervita("Ott")	Meetodi väljakutse
