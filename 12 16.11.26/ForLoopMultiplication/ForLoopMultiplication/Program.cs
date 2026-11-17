@@ -24,7 +24,7 @@
                     //else
                 }
 
-                Console.WriteLine("\n");
+                Console.Write("\n");
             }
         }
     }
